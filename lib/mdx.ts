@@ -32,15 +32,19 @@ export async function getWritingBySlug(slug: string): Promise<{ meta: WritingMet
   const source = await fs.readFile(fullPath, 'utf-8');
 
   const remarkPlugins: Pluggable[] = [remarkGfm as Pluggable, remarkMdxFrontmatter as Pluggable];
-  const rehypePlugins: Pluggable[] = [rehypeSlug as Pluggable, [rehypeAutolinkHeadings as Pluggable, { behavior: 'wrap' }]];
+  const rehypePlugins: Pluggable[] = [
+    rehypeSlug as Pluggable,
+    [rehypeAutolinkHeadings, { behavior: 'wrap' }] as unknown as Pluggable,
+  ];
 
   const { content, frontmatter } = await compileMDX<{ title: string; description: string; date: string; tags: string[]; cover: string }>({
     source,
     options: {
       parseFrontmatter: true,
       mdxOptions: {
-        remarkPlugins,
-        rehypePlugins,
+        // Cast to keep unified plugin typing happy in constrained build environments.
+        remarkPlugins: remarkPlugins as any,
+        rehypePlugins: rehypePlugins as any,
       },
     },
   });
