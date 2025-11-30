@@ -7,6 +7,7 @@ import remarkGfm from 'remark-gfm';
 import remarkMdxFrontmatter from 'remark-mdx-frontmatter';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import type { Pluggable } from 'unified';
 
 export type WritingMeta = {
   slug: string;
@@ -30,13 +31,16 @@ export async function getWritingBySlug(slug: string): Promise<{ meta: WritingMet
   const fullPath = path.join(CONTENT_PATH, `${slug}.mdx`);
   const source = await fs.readFile(fullPath, 'utf-8');
 
+  const remarkPlugins: Pluggable[] = [remarkGfm as Pluggable, remarkMdxFrontmatter as Pluggable];
+  const rehypePlugins: Pluggable[] = [rehypeSlug as Pluggable, [rehypeAutolinkHeadings as Pluggable, { behavior: 'wrap' }]];
+
   const { content, frontmatter } = await compileMDX<{ title: string; description: string; date: string; tags: string[]; cover: string }>({
     source,
     options: {
       parseFrontmatter: true,
       mdxOptions: {
-        remarkPlugins: [remarkGfm, remarkMdxFrontmatter],
-        rehypePlugins: [rehypeSlug, [rehypeAutolinkHeadings, { behavior: 'wrap' }]],
+        remarkPlugins,
+        rehypePlugins,
       },
     },
   });
