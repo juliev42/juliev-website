@@ -1,3 +1,4 @@
+import React from 'react';
 import type { Metadata } from 'next';
 import './globals.css';
 import { Inter, Fraunces, JetBrains_Mono } from 'next/font/google';
