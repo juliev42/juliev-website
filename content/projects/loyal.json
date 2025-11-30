@@ -1,0 +1,11 @@
+{
+  "title": "Loyal Longevity DS",
+  "oneLiner": "Canine aging data science for publication and public announcement; translating bench science to ML insights.",
+  "role": "Data Scientist",
+  "dates": "2021 — 2022",
+  "links": {
+    "paper": "https://loyalfordogs.com"
+  },
+  "tags": ["Longevity", "Data Science", "Health"],
+  "cover": "/images/covers/loyal.jpg"
+}

@@ -1,0 +1,12 @@
+{
+  "title": "Geneial Open-Source Tools",
+  "oneLiner": "ARPA-H–aligned LLM agents for rare-disease research and open standards like LinkML and Phenopackets.",
+  "role": "Lead Data Scientist",
+  "dates": "2023 — Present",
+  "links": {
+    "repo": "https://github.com/geneial",
+    "demo": "https://geneial.ai"
+  },
+  "tags": ["LLM", "Health", "Rare Disease", "LinkML", "Phenopackets"],
+  "cover": "/images/covers/geneial.jpg"
+}

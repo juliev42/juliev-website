@@ -1,0 +1,11 @@
+{
+  "title": "ReproAI",
+  "oneLiner": "Conversational counseling for women's health — founder-led experiments in empathetic, accurate guidance.",
+  "role": "Founder",
+  "dates": "2022 — 2023",
+  "links": {
+    "demo": "https://reproai.example.com"
+  },
+  "tags": ["Women's Health", "LLM", "Product"],
+  "cover": "/images/covers/reproai.jpg"
+}

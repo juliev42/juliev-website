@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-base: #0b0c10;
+  --color-surface: #121319;
+  --color-text: #ededf0;
+  --color-text-muted: #b8bcc7;
+  --color-accent: #8a7aff;
+  --color-accent-alt: #2bd4c5;
+  color-scheme: dark;
+}
+
+.light {
+  --color-base: #f8fafc;
+  --color-surface: #ffffff;
+  --color-text: #0b0c10;
+  --color-text-muted: #5b6070;
+  --color-accent: #8a7aff;
+  --color-accent-alt: #2bd4c5;
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--color-base);
+  color: var(--color-text);
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+}
+
+main {
+  min-height: 80vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+::-moz-selection {
+  background: rgba(138, 122, 255, 0.3);
+}
+
+::selection {
+  background: rgba(138, 122, 255, 0.3);
+}
+
+.prose {
+  max-width: 72ch;
+}
+
+.prose h2, .prose h3, .prose h4 {
+  scroll-margin-top: 120px;
+}
+
+.masonry {
+  column-gap: 1.5rem;
+}
+
+.masonry > * {
+  break-inside: avoid;
+  margin-bottom: 1.5rem;
+}
+
+.gradient-border {
+  position: relative;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: 1.25rem;
+  background: linear-gradient(120deg, rgba(138, 122, 255, 0.6), rgba(43, 212, 197, 0.4));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+}
+
+.fade-edge {
+  background: linear-gradient(180deg, rgba(11, 12, 16, 0) 0%, rgba(11, 12, 16, 1) 35%);
+}
+
+button:focus-visible, a:focus-visible {
+  outline: 2px solid #8A7AFF;
+  outline-offset: 2px;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}

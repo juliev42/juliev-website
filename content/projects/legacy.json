@@ -1,0 +1,11 @@
+{
+  "title": "Legacy Projects",
+  "oneLiner": "Archives and earlier experiments — hardware, education, and open-source community projects.",
+  "role": "Contributor",
+  "dates": "2015 — 2018",
+  "links": {
+    "demo": "https://archive.example.com"
+  },
+  "tags": ["Archive", "Open Source", "Education"],
+  "cover": "/images/covers/legacy.jpg"
+}

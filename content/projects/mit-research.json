@@ -1,0 +1,11 @@
+{
+  "title": "MIT Research",
+  "oneLiner": "Biosensors to data to ML — experiments connecting wet-lab sensing to interpretable models.",
+  "role": "Researcher",
+  "dates": "2018 — 2020",
+  "links": {
+    "paper": "https://mit.edu"
+  },
+  "tags": ["Biosensors", "ML", "Research"],
+  "cover": "/images/covers/mit.jpg"
+}
